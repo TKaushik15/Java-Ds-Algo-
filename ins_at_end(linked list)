@@ -1,0 +1,52 @@
+import java.io.*;
+class insertion_at_end{
+// Since we have linked list we will take Node head
+//Node head field iholds a reference to the initial element of the linked list
+   
+   Node head;    //this is head node
+    static class Node{
+        int data;
+        Node next;
+        
+        Node(int x){
+            data=x;
+            next=null;
+        }
+    }
+
+    public static insertion_end insert(insertion_at_end list,int data){
+        Node new_node=new Node(data);
+        new_node.next=null;
+        if(list.head==null)
+        list.head=new_node;
+
+        else{
+            Node last=list.head;
+            while(last.next!=null){
+                last=last.next;
+            }
+            last.next=new_node;
+        }
+        return list;
+    }
+    public static void display(insertion_end list){
+        Node current_node=list.head;
+        System.out.print("Linked List: ");
+        while(current_node!=null)
+        {
+            System.out.print(current_node.data+" ");
+            current_node=current_node.next;
+        }
+    }
+    public static void main(String args[]){
+        insertion_end list=new insertion_end();
+        list=insert(list,1);
+        list=insert(list,2);
+        list=insert(list,3);
+        list=insert(list,4);
+        list=insert(list,5);
+
+        display(list);
+    }
+
+}
