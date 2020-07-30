@@ -1,7 +1,10 @@
-import java.util.*;
-class linearsearch
+import java.util.Scanner;
+class linear_search
 {
  public static void main(String[] args)
+  // We will read an array and read the element we need to find
+  // We will declare var flag= 0 and use a for loop to find the elemtnt 
+  
  {  Scanner sc =new Scanner (System.in);
      int n = sc.nextInt();
      int a[]=new int[n];
@@ -10,7 +13,7 @@ class linearsearch
        a[i]=sc.nextInt();
      }
      int x=sc.nextInt();
-     sc.close();
+  
      int j;
      int flag=0;
      for(j = 0; j < n; j++) 
@@ -21,8 +24,8 @@ class linearsearch
         break;}
     } 
     if(flag==1)
-    System.out.print("found at"+" "+j);
+    System.out.print("element is found at index"+" "+j);
     else
-    System.out.print("not found");
+    System.out.print("element not found");
  }
 }
