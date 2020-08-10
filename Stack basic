@@ -1,0 +1,49 @@
+public class Main
+{
+  static final int max = 100;
+  int arr[] = new int[max];
+  int top;
+
+  boolean isEmpty ()
+  {
+    return (top < 0);
+  }
+
+  Stack (){
+    top = -1;   //initializes the top/last inndex pos. to -1
+  }
+
+  int push (int data)
+  {
+    if (top >= max - 1){
+	System.out.println ("Stack Overflow");      //call stack pointer exceeds the stack index           
+	return 0;
+    }
+    else{
+	arr[++top] = data;
+	System.out.println (data);
+	return data;
+    }
+  }
+    int pop (){
+    if (top < 0){
+	System.out.println ("Stack Underflow");     //stack is empty and when elements are called
+	return 0;
+    }
+    else{
+	int data = arr[top--];
+	return data;
+    }
+  }
+}
+
+public class Main{
+  public static void main (String[]args) {
+    Stack st = new Stack ();
+    st.push (1);    // push() pushes an element to stack whereas pop() remobves it
+    st.push (2);
+    st.push (3);
+    st.pop ();
+
+  }
+}
